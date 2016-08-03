@@ -1,13 +1,13 @@
 # Amazon Crawler
 A relatively simple amazon.com crawler written in python. It has the following features:
 
- * multi-threaded (using eventlet) so it supports hundreds of simultaneous requests, depending on machine's limits
+ * supports hundreds of simultaneous requests, depending on machine's limits
  * supports using proxy servers
- * supports multiple machine orchestrating the crawl and keeping in sync
+ * supports scaling to multiple machines orchestrating the crawl and keeping in sync
  * can be paused and restarted without losing its place
  * logs progress and warning conditions to a file for later analysis
 
-It was used to pull over 1MM+ products and their images from amazon in a few hours. [Read more]()
+It was used to pull over 1MM+ products and their images from amazon in a few hours. [Read more]().
 
 ## Getting it Setup
 After you get a copy of this codebase pulled down locally (either downloaded as a zip or git cloned), you'll need to install the python dependencies:
@@ -16,9 +16,9 @@ After you get a copy of this codebase pulled down locally (either downloaded as 
 
 Then you'll need to go into the `settings.py` file and update a number of values:
 
-    * **Database Name, Host and User** - Connection information for storing products in a postgres database
-    * **Redis Host, Port and Database** - Connection information for storing the URL queue in redis
-    * **Proxy List as well as User, Password and Port** - Connection information for your list of proxy servers
+ * **Database Name, Host and User** - Connection information for storing products in a postgres database
+ * **Redis Host, Port and Database** - Connection information for storing the URL queue in redis
+ * **Proxy List as well as User, Password and Port** - Connection information for your list of proxy servers
 
 Once you've updated all of your connection information, you'll need to run the following at the command line to setup the postgres table that will store the product records:
 
@@ -26,12 +26,12 @@ Once you've updated all of your connection information, you'll need to run the f
 
 The fields that are stored for each product are the following:
 
-    * title
-    * product_url   # URL for the detail page
-    * listing_url   # URL of the subcategory listing page we found this product on
-    * price
-    * primary_img   # the URL to the full-size primary product image
-    * crawl_time    # the timestamp of when the crawl began
+ * title
+ * product_url *(URL for the detail page)*
+ * listing_url *(URL of the subcategory listing page we found this product on)*
+ * price
+ * primary_img *(the URL to the full-size primary product image)*
+ * crawl_time *(the timestamp of when the crawl began)*
 
 ## How it Works
 You begin the crawler for the first time by running:
