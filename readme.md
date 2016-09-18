@@ -13,6 +13,9 @@ It was used to pull over 1MM+ products and their images from amazon in a few hou
 After you get a copy of this codebase pulled down locally (either downloaded as a zip or git cloned), you'll need to install the python dependencies:
 
     pip install -r requirements.txt
+    
+    Installation on Mac OS X version 10.11.6:
+    sudo pip install -r requirements.txt --user
 
 Then you'll need to go into the `settings.py` file and update a number of values:
 
