@@ -1,6 +1,6 @@
 BeautifulSoup==3.2.1
 PySocks==1.5.7
-eventlet==0.19.0
+eventlet==0.31.0
 greenlet==0.4.10
 psycopg2==2.6.2
 redis==2.10.5
