@@ -3,6 +3,6 @@ PySocks==1.5.7
 eventlet==0.31.0
 greenlet==0.4.10
 psycopg2==2.6.2
-redis==2.10.5
+redis==4.4.4
 requests==2.20.0
 wsgiref==0.1.2
